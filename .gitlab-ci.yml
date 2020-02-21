@@ -1,0 +1,16 @@
+stages:
+  - pages
+
+cache:
+  paths:
+    - public/history
+    - public/
+
+pages:
+  stage: pages
+  script:
+    - scripts/allure.sh
+  artifacts:
+    paths:
+      - public
+  when: on_success
